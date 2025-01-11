@@ -2,22 +2,19 @@
 <html lang="ja">
 <head>
 	<meta charset="UTF-8">
-	<title>Vue</title>
+	<title>属性へのバインド</title>
 </head>
 <body>
 	<h1 id="app">
-         {{ message }}
-         {{ message2 }}
-    </h1>
-
+		<a v-bind:href="google">検索エンジン</a>
+	</h1>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello World!',
-    message2: 'Hello Vue!!',
+    google: 'https://google.com'
   }
 })
 </script>	
