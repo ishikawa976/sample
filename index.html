@@ -1,14 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-    <meta charset="utf-8">
+	<meta charset="UTF-8">
+	<title>Vue</title>
 </head>
- 
 <body>
-    Hello World！
-    welcome
-    good morning
-    nihao
-    こんにちは
+	<h1 id="app">
+		{{ message }}
+	</h1>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello World!'
+  }
+})
+</script>	
 </body>
 </html>
