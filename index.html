@@ -6,7 +6,7 @@
 </head>
 <body>
 	<h1 id="app">
-		<a v-bind:href="google">検索エンジン</a>
+		<a v-bind:style="style">検索エンジン</a>
 	</h1>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -14,7 +14,7 @@
 var app = new Vue({
   el: '#app',
   data: {
-    google: 'https://google.com'
+    style: 'font-size:12px;color:red'
   }
 })
 </script>	
