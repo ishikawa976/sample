@@ -13,7 +13,10 @@
 <body>
 	<div id="app">
 		<h1 v-bind:class="{active: isActive, error: hasError}">class属性へのバインド</h1>
-		<p v-show="stock_number > 0">販売中です。</p>
+		<div v-if="stock_number > 0">
+			<p>販売中です。</p>
+			<p>まだ在庫は{{ stock_number }}あります。</p>
+		</div>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -23,7 +26,7 @@ var app = new Vue({
   data: {
     isActive: true,
 	hasError: false,
-	stock_number: 1
+	stock_number: 500000000
 	}
 })
 </script>	
