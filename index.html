@@ -12,7 +12,7 @@
 </style>
 <body>
 	<div id="app">
-		<h1 v-bind:class="{active: isActive}">class属性へのバインド</h1>
+		<h1 v-bind:class="{active: isActive, error: hasError}">class属性へのバインド</h1>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -20,7 +20,8 @@
 var app = new Vue({
   el: '#app',
   data: {
-    isActive: true
+    isActive: true,
+	hasError: false
   }
 })
 </script>	
