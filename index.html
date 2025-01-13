@@ -13,10 +13,9 @@
 <body>
 	<div id="app">
 		<a v-bind:href="github_url">GIthubリモートリポジトリー</a>
-		<a v-bind:href="reference_url">参考サイト</a>
-		<ul>
-			<li v-for="(user,name,index) in users">{{ name }} {{ user.email }}({{ user.age }})</li>
-		</ul>
+		<a v-bind:href="reference_url">参考サイト</a><br>
+		<input type="text" v-model="textInput">
+		<p>{{ textInput }}</p>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -26,25 +25,7 @@ var app = new Vue({
   data: {
 	github_url: 'https://github.com/ishikawa976/sample',
 	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref',
-	users: {
-      'Ken': {
-        age: 20,
-        email: 'ken@gmail.com'
-      },
-      'Mike': {
-        age:23,
-        email: 'mike@yahoo.com'
-      },      
-      'John': {
-        age:21,
-        email: 'john.doe@example.com'
-      },      
-      'Lisa': {
-        age:20,
-        email: 'lisa@google.com'
-      }
-
-	}
+	textInput: '初期値はここに入れておく',	
 	}
 })
 </script>	
