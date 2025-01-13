@@ -14,10 +14,7 @@
 	<div id="app">
 		<a v-bind:href="github_url">GIthubリモートリポジトリー</a>
 		<a v-bind:href="reference_url">参考サイト</a><br>
-		<p>10文字以上の文字列を入力してください。</p>
-		<input type="text" v-model="inputCharactors">
-		<p v-if="inputNumber < 10">必要な文字数は{{ needNumbers }}文字です</p>
-		<p v-else>10文字以上入力されています</p>
+		<input type="number" v-model="count">
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -27,18 +24,17 @@ var app = new Vue({
   data: {
 	github_url: 'https://github.com/ishikawa976/sample',
 	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref',
-	inputCharactors: ''		
+	count: 0	
 	},
   
  
-	computed:{
-  		inputNumber : function (){
-  			return this.inputCharactors.length;
-  		},
-  		needNumbers : function(){
-  			return 10 - this.inputNumber;
-  		}
-  	}
+	watch: {
+      count: function(value){
+        if(value > 100){
+          console.log('入力値が100を超えました')
+        }
+      }
+    }
  
 })
 </script>	
