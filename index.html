@@ -15,7 +15,7 @@
 		<a v-bind:href="github_url">GIthubリモートリポジトリー</a>
 		<a v-bind:href="reference_url">参考サイト</a>
 		<ul>
-			<li v-for="friend in friends">{{ friend }}</li>
+			<li v-for="(user,index) in users">{{ index }} {{ user.name }}({{ user.age }})</li>
 		</ul>
 	</div>
 
@@ -26,7 +26,12 @@ var app = new Vue({
   data: {
 	github_url: 'https://github.com/ishikawa976/sample',
 	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref',
-	friends: ['Ken','Mike','John','Lisa'],
+	users: [
+     {id: 1, name:'Ken', age: 20},
+     {id: 2, name:'Mike', age: 23},
+     {id: 3, name:'John', age: 21},
+     {id: 4, name:'Lisa', age: 20},
+    ],
 
 	}
 })
