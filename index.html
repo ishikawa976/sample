@@ -14,12 +14,9 @@
 	<div id="app">
 		<a v-bind:href="github_url">GIthubリモートリポジトリー</a>
 		<a v-bind:href="reference_url">参考サイト</a>
-		</a>
-		<h1 v-bind:class="{active: isActive, error: hasError}">class属性へのバインド</h1>
-		<div v-if="stock_number > 0">
-			<p>販売中です。</p>
-			<p>まだ在庫は{{ stock_number }}あります。</p>
-		</div>
+		<ul>
+			<li v-for="friend in friends">{{ friend }}</li>
+		</ul>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -27,11 +24,10 @@
 var app = new Vue({
   el: '#app',
   data: {
-    isActive: true,
-	hasError: false,
-	stock_number: 500000000,
 	github_url: 'https://github.com/ishikawa976/sample',
-	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref'
+	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref',
+	friends: ['Ken','Mike','John','Lisa'],
+
 	}
 })
 </script>	
