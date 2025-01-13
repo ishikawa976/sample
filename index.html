@@ -6,15 +6,16 @@
 </head>
 <style>
 	.active{
-		color: #fff;
 		background-color: red;
+		color:white;
 	}
 </style>
 <body>
 	<div id="app">
 		<a v-bind:href="github_url">GIthubリモートリポジトリー</a>
 		<a v-bind:href="reference_url">参考サイト</a><br>
-		<button v-on:click="clickButton">ボタン</button>
+		<p>税抜価格: ¥{{ no_tax_price }}</p>
+		<p>税込価格: ¥{{ include_tax_price }}</p>
 	</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -24,15 +25,16 @@ var app = new Vue({
   data: {
 	github_url: 'https://github.com/ishikawa976/sample',
 	reference_url: 'https://reffect.co.jp/vue/vue-js-basic#ahref',
-	
+	no_tax_price: 100	
 	},
   
- methods:{
-    //clickButton(){
-  	clickButton : function (){
-  		alert('Click Button')
+ 
+	computed:{
+  		include_tax_price : function (){
+  			return this.no_tax_price*1.08
+  		}
   	}
-  }
+ 
 })
 </script>	
 </body>
